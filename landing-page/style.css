@@ -1,0 +1,54 @@
+@font-face{
+	font-family: Open Sans;
+	src:url("Open_Sans/OpenSans-Light.ttf");
+}
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Open Sans;
+}
+.logo-mi{
+	width: 30px;
+}
+.btn-buy{
+	padding: 0px !important;
+}
+.btn-buy:hover{
+	color: white !important;
+	background-color: orange !important;
+}
+.btn-link:hover{
+	text-decoration: none !important;
+}
+.android-one-title{
+	text-align: center !important;
+}
+.android-one-logo{
+	padding: auto !important;
+	width: 200px;
+}
+.list-group-item{
+	border: none !important;
+	text-align: center !important;
+	font-size: 12px;
+}
+/*product card*/
+.card-product{
+	width: 100%;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 2rem;
+	overflow: hidden; 
+	position: relative;
+}
+.sale-sticky{
+	color: white;
+	background-color: orange;
+	display: block;
+	text-align: center;
+	width: 100px; 
+	position: absolute;
+	top: 10px;
+	right: -30px;
+	transform: rotate(45deg);
+}
