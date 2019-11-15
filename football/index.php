@@ -27,14 +27,14 @@
 		foreach ($data as $value) {
 			$html .= '
 			<tr role="row">
-			<td>'.$value['id'].'</td>
-			<td>'.$value['name'].'</td>
-			<td>'.$value['age'].'</td>
-			<td>'.$value['national'].'</td>
-			<td>'.$value['position'].'</td>
-			<td>'.$value['salary'].' $</td>
-			<td><a href="edit.php?id='.$value['id'].'">Edit</a></td>
-			<td><a href="delete.php?id='.$value['id'].'"> Delete</a></td>
+				<td>'.$value['id'].'</td>
+				<td>'.$value['name'].'</td>
+				<td>'.$value['age'].'</td>
+				<td>'.$value['national'].'</td>
+				<td>'.$value['position'].'</td>
+				<td>'.$value['salary'].' $</td>
+				<td><a href="edit.php?id='.$value['id'].'">Edit</a></td>
+				<td><a href="delete.php?id='.$value['id'].'"> Delete</a></td>
 			</tr>';
 		}
 	?>

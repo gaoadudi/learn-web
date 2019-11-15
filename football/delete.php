@@ -1,9 +1,9 @@
 <?php
     $id = $_GET['id'];
     $con = mysqli_connect('localhost', 'root', '', 'cauthu');
-        //Viết câu SQL lấy tất cả dữ liệu trong bảng players
+    //Viết câu SQL lấy tất cả dữ liệu trong bảng players
     $sql = "DELETE FROM `players` WHERE `id`='".$id."'";
-        // Chạy câu SQL
+    // Chạy câu SQL
     if ($result = mysqli_query($con,$sql)) {
         ?>
         <script>
