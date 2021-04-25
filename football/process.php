@@ -35,10 +35,10 @@
     } 
     else{
         if (isset($_GET['id'])) {
-            //Chỉnh sửa thông tin
-            //Kết nối database
-            $con = mysqli_connect('localhost', 'root', '', 'cauthu');
-            //Viết câu SQL cập nhật cả dữ liệu trong bảng players
+            // Chỉnh sửa thông tin
+            // Kết nối database
+            $con = mysqli_connect('localhost', 'root', '', 'football');
+            // Viết câu SQL cập nhật cả dữ liệu trong bảng players
             $sql = "UPDATE `players` SET `name`='".$data['name']."',`age`='".$data['age']."',`national`='".$data['national']."',`position`='".$data['position']."',`salary`='".$data['salary']."' WHERE `id` = ".$_GET['id'];
             // Chạy câu SQL
             if ($result = mysqli_query($con,$sql)) {
@@ -49,13 +49,13 @@
             }
         } 
         else{
-            //Thêm mới cầu thủ
-            //Kết nối database
+            // Thêm mới cầu thủ
+            // Kết nối database
             $con = mysqli_connect('localhost', 'root', '', 'cauthu');
-            //Viết câu SQL chèn dữ liệu vào trong bảng players
+            // Viết câu SQL chèn dữ liệu vào trong bảng players
             $sql = "INSERT INTO `players` (`name`, `age`, `national`, `position`, `salary`) 
             VALUES ('".$data['name']."', '".$data['age']."', '".$data['national']."', '".$data['position']."', '".$data['salary']."');";
-            //Chạy câu SQL
+            // Chạy câu SQL
             if ($result = mysqli_query($con,$sql)) {
                 echo "<div class='alert alert-success text-center'><h2>Thêm mới cầu thủ thành công. Click vào <a href='index.php'>đây</a> để về trang danh sách</h2></div>";
             }

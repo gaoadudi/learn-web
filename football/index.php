@@ -13,13 +13,13 @@
 </head>
 <body>
 	<?php 
-		//Kết nối databse
-		$con = mysqli_connect('localhost', 'root', '', 'cauthu');
-		//Viết câu SQL lấy tất cả dữ liệu trong bảng players
+		// Kết nối databse
+		$con = mysqli_connect('localhost', 'root', '', 'football');
+		// Viết câu SQL lấy tất cả dữ liệu trong bảng players
 		$sql="SELECT * FROM `players` ORDER BY `id`";
-		//Chạy câu SQL
+		// Chạy câu SQL
 		$result=mysqli_query($con,$sql);
-		    //Gắn dữ liệu lấy được vào mảng $data
+		// Gắn dữ liệu lấy được vào mảng $data
 		while ($row=mysqli_fetch_assoc($result)) {
 			$data[] = $row;
 		}
@@ -70,5 +70,4 @@
 		</div>
 	</div>
 </body>
-
 </html>

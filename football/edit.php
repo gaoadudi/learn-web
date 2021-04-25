@@ -15,7 +15,7 @@
     <?php 
         $id = $_GET['id'];
         //Kết nối database
-        $con = mysqli_connect('localhost', 'root', '', 'cauthu');
+        $con = mysqli_connect('localhost', 'root', '', 'football');
         //Viết câu SQL lấy dữ liệu trong bảng players theo id
         $sql="SELECT * FROM `players` WHERE `id`= ".$id;
         //Chạy câu SQL
