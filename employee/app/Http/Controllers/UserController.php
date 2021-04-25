@@ -35,19 +35,17 @@ class UserController extends Controller
             'username'=> $user->username,
         ];  
         Mail::send('send_mail', $data, function($message) use ($user) {
-            $message->from('phanhieucf@gmail.com','Employee Direction')
+            $message->from('phanhieucf@gmail.com', 'Employee Direction')
                     ->to($user->email, 'Receiver')
                     ->subject('User Password');
         });
 
-        if (Mail::failures()) {
+        if(Mail::failures()) {
             return redirect()->back()->with('mess', 'Thêm thành viên thất bại. Không thể gửi email!');
         } else{
             $user->save();
             return redirect()->back()->with('mess', 'Đã thêm thành công. Mật khẩu đã được gửi vào email đăng ký!');
-        }
-
-    	
+        } 	
     }
 
     // Sửa người dùng

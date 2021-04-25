@@ -29,7 +29,7 @@ class MyLoginController extends Controller
                 $user = User::find($id);
                 $user->loginfirst = Carbon::now();
                 $user->save();
-                return redirect('edit-password/{{ $id }}')->with('mess', 'Đăng nhập lần đầu, vui lòng đổi lại mật khẩu!');
+                return redirect('edit-password/'.$id)->with('mess', 'Đăng nhập lần đầu, vui lòng đổi lại mật khẩu!');
             } else{
                 return redirect('list-department')->with('mess', 'Đăng nhập thành công');
             }
