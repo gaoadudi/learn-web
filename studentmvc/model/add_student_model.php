@@ -2,11 +2,11 @@
     // Nếu người dùng submit form
     if (!empty($_POST["add_student"])){
         // Lấy data
-        $data['ma'] = isset($_POST['ma']) ? $_POST['ma'] : '';
-        $data['ten'] = isset($_POST['ten']) ? $_POST['ten'] : '';
-        $data['gioitinh'] = isset($_POST['gioitinh']) ? $_POST['gioitinh'] : '';
-        $data['ngaysinh'] = isset($_POST['ngaysinh']) ? $_POST['ngaysinh'] : '';
-        $data['ngaysinh'] = date('Y-m-d', strtotime($data['ngaysinh']));
+        $data['code'] = isset($_POST['code']) ? $_POST['code'] : '';
+        $data['name'] = isset($_POST['name']) ? $_POST['name'] : '';
+        $data['gender'] = isset($_POST['gender']) ? $_POST['gender'] : '';
+        $data['birth'] = isset($_POST['birth']) ? $_POST['birth'] : '';
+        $data['birth'] = date('Y-m-d', strtotime($data['birth']));
  
         // Validate thông tin
         include "libs/validate.php";
@@ -14,7 +14,7 @@
          
         // Nếu ko lỗi thì insert
         if (!$errors){
-            insert("sinhvien", $data);
+            insert("students", $data);
             ?>
             <script>
                 alert("Thêm sinh viên thành công");

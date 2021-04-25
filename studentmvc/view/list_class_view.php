@@ -8,8 +8,8 @@
 			<label class="mr-1"><strong>Nội dung tìm kiếm:</strong></label> 
 			<div class="input-group-prepend">
 				<select name="control" class="form-control">
-					<option value="ma">Mã Lớp</option>
-					<option value="ten" <?php if (!empty($dieuKien) && $dieuKien=='ten') echo 'selected'; ?>>Tên Lớp</option>
+					<option value="code">Mã Lớp</option>
+					<option value="name" <?php if (!empty($dieuKien) && $dieuKien=='name') echo 'selected'; ?>>Tên Lớp</option>
 				</select>
 			</div>
 			<input type="text" name="keyword" class="form-control" placeholder="Tìm kiếm theo mã lớp hoặc tên lớp..." value="<?php echo (!empty($_POST['keyword'])) ? $_POST['keyword'] : ''; ?>">
@@ -29,9 +29,9 @@
 			<tbody>
 				<?php foreach ($data as $value) { ?>
 					<tr>
-						<td><?php echo $value['ma']; ?></td>
-						<td><?php echo $value['ten']; ?></td>
-						<td><?php echo $value['phonghoc']; ?></td>
+						<td><?php echo $value['code']; ?></td>
+						<td><?php echo $value['name']; ?></td>
+						<td><?php echo $value['room']; ?></td>
 						<td>
 							<form method="POST" action="<?php echo create_link(array('c'=>'class', 'a'=>'delete')); ?>">
 								<input class="btn btn-light btn-sm mb-1" onclick="window.location='<?php echo create_link(array('c'=>'class', 'a'=>'edit', 'id'=>$value['id'])); ?>'" type="button" value="SỬA"/> | 

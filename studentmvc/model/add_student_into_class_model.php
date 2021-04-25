@@ -12,7 +12,7 @@
 	}// Nếu còn sinh viên
 	else if ($idClass && $idStudent){
 		// Thêm sinh viên vào lớp
-		update("sinhvien", array('idlop'=>$idClass), "id", $idStudent);
+		update("students", array('id_class'=>$idClass), "id", $idStudent);
 		?>
 		<script>
 			alert("Thêm sinh viên vào lớp thành công");

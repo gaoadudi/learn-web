@@ -1,7 +1,7 @@
 <?php
 	// Hàm tạo URL
 	function base_url($url){
-	    return "http://localhost/studentmvc/".$url;
+	    return "http://localhost/learnweb/studentmvc/".$url;
 	}
 	 
 	// Hàm chuyển hướng đến URL
@@ -20,6 +20,7 @@
 		}
 		// Bỏ đi ký tự & ở đầu
 		$string = "?".ltrim($string, "&");
-		return "http://localhost/studentmvc/index.php".$string;// http://localhost/studentmvc/index.php?c=..&a=..
+		return "http://localhost/learnweb/studentmvc/index.php".$string;
+		// Vd: http://localhost/studentmvc/index.php?c=..&a=..
 	}
 ?>

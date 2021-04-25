@@ -2,7 +2,7 @@
 	// Thực hiện xóa
 	$id = isset($_POST["id"]) ? (int)$_POST["id"] : "";
 	if ($id){
-	    delete("lophoc", "id", $id);
+	    delete("classes", "id", $id);
 	    ?>
 	    <script>
 	    	alert("Xóa lớp học thành công");

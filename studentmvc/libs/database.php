@@ -130,7 +130,7 @@
         // Mảng dữ liệu insert
         foreach ($data as $field => $value){
             $fields .= $field.",";
-            // Chống SQL Injection
+            // Chèn / vào ' or " trong chuỗi => Chống SQL Injection
             $values .= "'".addslashes($value)."',";
         }
         // Xóa ký từ , ở cuối chuỗi

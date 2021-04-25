@@ -2,7 +2,7 @@
     // Lấy thông tin hiển thị lên để người dùng sửa
     $id = isset($_GET["id"]) ? (int)$_GET["id"] : "";
     if ($id){
-        $data = get_by_value("lophoc", "id", $id);
+        $data = get_by_value("classes", "id", $id);
     }
      
     // Nếu không có dữ liệu tức không tìm thấy class cần sửa
@@ -17,25 +17,25 @@
         $noiDung = $_POST["keyword"];
 
         // Câu truy vấn lấy sinh viên theo tìm kiếm
-        $sql = "SELECT * FROM sinhvien WHERE {$dieuKien} LIKE '%{$noiDung}%' AND idlop='{$id}'";     
+        $sql = "SELECT * FROM students WHERE {$dieuKien} LIKE '%{$noiDung}%' AND id_class='{$id}'";     
         $data2 = get_execute($sql); 
     }
     else{
         // Câu truy vấn lấy tất cả sinh viên có trong lớp
-        $sql = "SELECT * FROM sinhvien WHERE idlop='{$id}'";     
+        $sql = "SELECT * FROM students WHERE id_class='{$id}'";     
         $data2 = get_execute($sql); 
     }
 
     // Lấy danh sách sinh viên không có trong lớp
-    $sql = "SELECT * FROM sinhvien WHERE idlop IS NULL";     
+    $sql = "SELECT * FROM students WHERE id_class IS NULL";     
     $data3 = get_execute($sql);
      
     // Nếu người dùng submit form
     if (!empty($_POST['edit_class'])){
         // Lấy data
-        $data['ma'] = isset($_POST['ma']) ? $_POST['ma'] : '';
-        $data['ten'] = isset($_POST['ten']) ? $_POST['ten'] : '';
-        $data['phonghoc'] = isset($_POST['phonghoc']) ? $_POST['phonghoc'] : '';
+        $data['code'] = isset($_POST['code']) ? $_POST['code'] : '';
+        $data['name'] = isset($_POST['name']) ? $_POST['name'] : '';
+        $data['room'] = isset($_POST['room']) ? $_POST['room'] : '';
 
         // Validate thông tin
         include "libs/validate.php";
@@ -46,7 +46,7 @@
             // Bỏ phần tử id ở đầu
             array_shift($data);
             
-            update("lophoc", $data, "id", $id);
+            update("classes", $data, "id", $id);
             ?>
             <script>
                 alert("Sửa lớp học thành công");

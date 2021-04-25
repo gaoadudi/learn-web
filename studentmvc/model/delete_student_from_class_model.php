@@ -3,7 +3,7 @@
 	$idStudent = isset($_POST["idStudent"]) ? (int)$_POST["idStudent"] : "";
 	if ($idClass && $idStudent){
     	// Xóa sinh viên khỏi lớp
-		update("sinhvien", array('idlop'=>'null'), "id", $idStudent);
+		update("students", array('id_class'=>'null'), "id", $idStudent);
 		?>
 		<script>
 			alert("Xóa sinh viên khỏi lớp thành công");

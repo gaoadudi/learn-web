@@ -2,9 +2,9 @@
     // Nếu người dùng submit form
     if (!empty($_POST['add_class'])){
         // Lấy data
-        $data['ma'] = isset($_POST['ma']) ? $_POST['ma'] : '';
-        $data['ten'] = isset($_POST['ten']) ? $_POST['ten'] : '';
-        $data['phonghoc'] = isset($_POST['phonghoc']) ? $_POST['phonghoc'] : '';
+        $data['code'] = isset($_POST['code']) ? $_POST['code'] : '';
+        $data['name'] = isset($_POST['name']) ? $_POST['name'] : '';
+        $data['room'] = isset($_POST['room']) ? $_POST['room'] : '';
  
         // Validate thông tin
         include "libs/validate.php";
@@ -12,7 +12,7 @@
          
         // Nếu ko lỗi thì insert
         if (!$errors){
-            insert("lophoc", $data);
+            insert("classes", $data);
             ?>
             <script>
                 alert("Thêm lớp học thành công");
